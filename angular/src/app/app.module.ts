@@ -19,35 +19,33 @@ import { PipesModule } from "./pipes/pipes.module";
 // import { ProjectsComponent } from "./projects/projects.component";
 // import { ProjectDetailComponent } from "./projects/project-detail/project-detail.component";
 import { SharedModule } from "./shared/shared.module";
-import { ServiceWorkerModule } from '@angular/service-worker';
 // import { SkillsComponent } from "./skills/skills.component";
-// import { ServiceWorkerModule } from "@angular/service-worker";
+import { ServiceWorkerModule } from "@angular/service-worker";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
+    // ContactComponent,
     HomeComponent,
-    PageNotFoundComponent,
-    ProjectsComponent,
-    ProjectDetailComponent,
-    SkillsComponent,
+    // PageNotFoundComponent,
+    // ProjectsComponent,
+    // ProjectDetailComponent,
+    // SkillsComponent,
   ],
   imports: [
-    AngularFireModule.initializeApp(environment.firebase, "angular-portfolio"), // imports firebase/app needed for everything
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    // AngularFireModule.initializeApp(environment.firebase, "angular-portfolio"), // imports firebase/app needed for everything
+    // AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    // AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    // AngularFireStorageModule, // imports firebase/storage only needed for storage features
     BrowserModule.withServerTransition({ appId: "serverApp" }),
     HttpClientModule,
     NavModule,
     PipesModule,
-    PostsModule,
+    // PostsModule,
     SharedModule.forRoot(),
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
     }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   exports: [],
   providers: [],
