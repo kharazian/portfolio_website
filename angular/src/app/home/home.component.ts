@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 	profile: any;
 	repos: number;
   lastUpdated: string;
+  mainImg: string;
   
 	constructor(
     private githubService: GithubService,
@@ -29,7 +30,9 @@ export class HomeComponent implements OnInit {
 			.subscribe(resultArray => {
 				this.profile = resultArray;
 				this.repos = this.profile.public_repos;
-				this.lastUpdated = this.profile.updated_at;
+        this.lastUpdated = this.profile.updated_at;
+        this.mainImg = this.profile.avatar_url;
+        
 			});
 	}
 

@@ -10,27 +10,27 @@ import { HttpClientModule } from "@angular/common/http";
 import { environment } from "../environments/environment";
 
 import { AppComponent } from "./app.component";
-// import { ContactComponent } from "./contact/contact.component";
+import { ContactComponent } from "./contact/contact.component";
 import { HomeComponent } from "./home/home.component";
 import { NavModule } from "./nav/nav.module";
-// import { PageNotFoundComponent } from "./pagenotfound/pagenotfound.component";
+import { PageNotFoundComponent } from "./pagenotfound/pagenotfound.component";
 import { PipesModule } from "./pipes/pipes.module";
-// import { PostsModule } from "./posts/posts.module";
-// import { ProjectsComponent } from "./projects/projects.component";
-// import { ProjectDetailComponent } from "./projects/project-detail/project-detail.component";
+import { PostsModule } from "./posts/posts.module";
+import { ProjectsComponent } from "./projects/projects.component";
+import { ProjectDetailComponent } from "./projects/project-detail/project-detail.component";
 import { SharedModule } from "./shared/shared.module";
-// import { SkillsComponent } from "./skills/skills.component";
+import { SkillsComponent } from "./skills/skills.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 
 @NgModule({
   declarations: [
     AppComponent,
-    // ContactComponent,
+    ContactComponent,
     HomeComponent,
-    // PageNotFoundComponent,
-    // ProjectsComponent,
-    // ProjectDetailComponent,
-    // SkillsComponent,
+    PageNotFoundComponent,
+    ProjectsComponent,
+    ProjectDetailComponent,
+    SkillsComponent,
   ],
   imports: [
     // AngularFireModule.initializeApp(environment.firebase, "angular-portfolio"), // imports firebase/app needed for everything
@@ -41,7 +41,7 @@ import { ServiceWorkerModule } from "@angular/service-worker";
     HttpClientModule,
     NavModule,
     PipesModule,
-    // PostsModule,
+    PostsModule,
     SharedModule.forRoot(),
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
