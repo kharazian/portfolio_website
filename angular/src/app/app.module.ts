@@ -1,22 +1,56 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { AngularFireModule } from "@angular/fire";
+// import { AngularFirestoreModule } from "@angular/fire/firestore";
+// import { AngularFireStorageModule } from "@angular/fire/storage";
+// import { AngularFireAuthModule } from "@angular/fire/auth";
+
+import { environment } from "../environments/environment";
+
+import { AppComponent } from "./app.component";
+// import { ContactComponent } from "./contact/contact.component";
+import { HomeComponent } from "./home/home.component";
+import { NavModule } from "./nav/nav.module";
+// import { PageNotFoundComponent } from "./pagenotfound/pagenotfound.component";
+import { PipesModule } from "./pipes/pipes.module";
+// import { PostsModule } from "./posts/posts.module";
+// import { ProjectsComponent } from "./projects/projects.component";
+// import { ProjectDetailComponent } from "./projects/project-detail/project-detail.component";
+import { SharedModule } from "./shared/shared.module";
+import { ServiceWorkerModule } from '@angular/service-worker';
+// import { SkillsComponent } from "./skills/skills.component";
+// import { ServiceWorkerModule } from "@angular/service-worker";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    ContactComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    ProjectsComponent,
+    ProjectDetailComponent,
+    SkillsComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
+    AngularFireModule.initializeApp(environment.firebase, "angular-portfolio"), // imports firebase/app needed for everything
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    BrowserModule.withServerTransition({ appId: "serverApp" }),
+    HttpClientModule,
+    NavModule,
+    PipesModule,
+    PostsModule,
+    SharedModule.forRoot(),
+    ServiceWorkerModule.register("ngsw-worker.js", {
+      enabled: environment.production,
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
+  exports: [],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
