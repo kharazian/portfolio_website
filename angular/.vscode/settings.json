@@ -1,5 +1,6 @@
 {
 	"editor.detectIndentation": false,
 	"editor.highlightActiveIndentGuide": false,
-	"editor.tabSize": 2
+  "editor.tabSize": 2,
+  "javascript.implicitProjectConfig.experimentalDecorators": true
 }

@@ -13,11 +13,11 @@ import { PipesModule } from '../pipes/pipes.module';
 		BrowserAnimationsModule,
 		CommonModule,
 		FlexLayoutModule,
-    	FormsModule,
-    	ReactiveFormsModule,
+   	FormsModule,
+   	ReactiveFormsModule,
 		MaterialModule,
-    	RouterModule,
-    	PipesModule
+   	RouterModule,
+   	PipesModule
 	],
 	declarations: [
   ]
