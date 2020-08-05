@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AKH.Portfolio.Blog;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace AKH.Portfolio.EntityFrameworkCore
 {
@@ -17,6 +19,13 @@ namespace AKH.Portfolio.EntityFrameworkCore
             //    b.ConfigureByConvention(); //auto configure for the base class props
             //    //...
             //});
+            
+            builder.Entity<Post>(b =>
+            {
+                b.ToTable("Posts");
+                b.ConfigureByConvention(); //auto configure for the base class props
+                b.Property(x => x.Title).IsRequired().HasMaxLength(128);
+            });
         }
     }
 }

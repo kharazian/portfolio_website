@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AKH.Portfolio.Blog;
+using Microsoft.EntityFrameworkCore;
 using AKH.Portfolio.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -21,6 +22,8 @@ namespace AKH.Portfolio.EntityFrameworkCore
     public class PortfolioDbContext : AbpDbContext<PortfolioDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside PortfolioDbContextModelCreatingExtensions.ConfigurePortfolio
